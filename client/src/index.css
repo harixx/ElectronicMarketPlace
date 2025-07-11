@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(36, 33%, 97%);
+  --foreground: hsl(0, 0%, 17%);
+  --muted: hsl(36, 20%, 95%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 17%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 17%);
+  --border: hsl(36, 15%, 90%);
+  --input: hsl(36, 15%, 90%);
+  --primary: hsl(45, 74%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(36, 20%, 95%);
+  --secondary-foreground: hsl(0, 0%, 17%);
+  --accent: hsl(36, 20%, 95%);
+  --accent-foreground: hsl(0, 0%, 17%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(45, 74%, 60%);
+  --radius: 0.5rem;
+  
+  /* Custom Elora colors */
+  --cream: hsl(36, 33%, 97%);
+  --blush: hsl(15, 30%, 85%);
+  --sage: hsl(85, 15%, 70%);
+  --gold: hsl(45, 74%, 60%);
+  --charcoal: hsl(0, 0%, 17%);
+  --stone: hsl(0, 0%, 42%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(45, 74%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'system-ui', sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-cream { color: var(--cream); }
+  .text-blush { color: var(--blush); }
+  .text-sage { color: var(--sage); }
+  .text-gold { color: var(--gold); }
+  .text-charcoal { color: var(--charcoal); }
+  .text-stone { color: var(--stone); }
+  
+  .bg-cream { background-color: var(--cream); }
+  .bg-blush { background-color: var(--blush); }
+  .bg-sage { background-color: var(--sage); }
+  .bg-gold { background-color: var(--gold); }
+  .bg-charcoal { background-color: var(--charcoal); }
+  .bg-stone { background-color: var(--stone); }
+  
+  .border-cream { border-color: var(--cream); }
+  .border-blush { border-color: var(--blush); }
+  .border-sage { border-color: var(--sage); }
+  .border-gold { border-color: var(--gold); }
+  .border-charcoal { border-color: var(--charcoal); }
+  .border-stone { border-color: var(--stone); }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading skeleton styles */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Image zoom effect */
+.image-zoom {
+  transition: transform 0.5s ease;
+}
+
+.image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(45, 74%, 50%);
+}

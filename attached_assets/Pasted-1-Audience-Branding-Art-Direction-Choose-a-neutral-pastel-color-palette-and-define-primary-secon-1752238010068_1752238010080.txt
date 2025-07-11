@@ -1,0 +1,124 @@
+1. Audience & Branding
+Art Direction
+
+Choose a neutral‑pastel color palette and define primary/secondary hex codes.
+
+Select 1–2 fonts (e.g. serif for headlines, sans for body) and add to your style guide.
+
+Imagery
+
+Source or shoot 10–15 high‑res lifestyle shots: models lounging in nightwear, bedroom backdrops.
+
+Create an “image mood board” folder in your asset library.
+
+Copy
+
+Write 5–7 short taglines or one‑liners (20–30 chars max) for hero banners and category intros.
+
+Replace any >50‑word blocks on home/listing pages with 1–2 sentence intros.
+
+2. Mobile Navigation & Search
+Menu Restructure
+
+Edit mobile nav to show these top‑level items only: Nighties, Sets, Robes, Loungewear, Sale.
+
+Remove duplicate sub‑menus and collapse “Mid‑Summer Sale” into a single promo banner.
+
+Search Bar
+
+Add a sticky, always‑visible search input at top of mobile pages.
+
+Hook up autocomplete suggestions (product title + category).
+
+Filters & Breadcrumbs
+
+Implement collapsible filter panel on PLPs with checkboxes for Size, Color, Fabric, Price.
+
+Add a “Clear All” link and make the filter button sticky as you scroll.
+
+Display breadcrumb links above product grid (“Home > Nighties > Floral Sets”).
+
+3. Homepage Redesign
+Hero Section
+
+Build a full‑width, responsive hero (static or 3‑slide carousel).
+
+Overlay one concise tagline + prominent “Shop Collection” button.
+
+Featured Categories
+
+Design a 4‑tile grid (mobile: 2×2) for core collections.
+
+Link each tile to its collection page; add brief 3‑word captions.
+
+Trust & Promo Bar
+
+Create a slim, sticky banner for “Free shipping over ₨X” / “30‑day returns” / current sale.
+
+Social Proof Module
+
+Pull top 4 best‑selling items (with star ratings) and add to “You May Like” row on homepage.
+
+4. Collection Pages (PLPs)
+Grid & Thumbnails
+
+Switch PLP to 2‑column mobile grid; ensure large, uniform aspect‑ratio thumbnails.
+
+Show 3 thumbnail images per product, swipe/tap to cycle.
+
+Quick Add
+
+Add “+” icon or “Add to Cart” button under each product card.
+
+Filters & Sort
+
+Enable sorting dropdown (Price: Low→High, Popularity) at top.
+
+Ensure filter panel opens and closes smoothly on mobile.
+
+5. Product Detail Pages (PDPs)
+Image Gallery
+
+Install zoom/pinch‑zoom plugin; upload 4–6 high‑res views per product.
+
+Stack description, fabric info, shipping info, and reviews vertically—no hidden tabs.
+
+Product Info UI
+
+Move price + “Add to Cart” + size/color selectors above the fold.
+
+Add low‑stock alerts (“Only 3 left!”) where inventory ≤ 5.
+
+Bulleted Description
+
+Convert prose into 4–6 bullet points: Fabric, Care, Fit, Origin, Special features.
+
+Reviews & Trust
+
+Embed average star rating near top; show 2–3 review excerpts lower down.
+
+Add “Free returns” and payment‑logo icons below the CTA.
+
+6. Cart & Checkout
+Cart Overlay
+
+Implement a slide‑in cart panel with item thumbnails, quantities, remove buttons.
+
+Guest Flow
+
+Disable required account creation; allow “Continue as Guest.”
+
+Form Simplification
+
+Merge name fields to one “Full Name” input; use address autocomplete.
+
+Set ZIP input to numeric keyboard on mobile.
+
+Digital Wallets
+
+Configure Apple Pay and Google Pay buttons via Stripe.
+
+Validation & Progress
+
+Add inline validation messages; show a progress bar or list of steps if multi‑page.
+

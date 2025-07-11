@@ -67,127 +67,147 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    // Seed products
+    // Seed products with modern nightwear categories
     const sampleProducts: Omit<Product, 'id' | 'createdAt'>[] = [
       {
-        name: "Blush Pink Silk Pajama Set",
-        description: "Premium mulberry silk with pearl buttons and contrast piping",
-        price: "15500.00",
-        salePrice: "12400.00",
-        category: "silk",
-        collection: "silk-collection",
-        fabric: "100% Mulberry Silk",
-        careInstructions: "Hand wash cold, hang dry, iron on low heat",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["Blush Pink", "Ivory", "Champagne"],
-        images: [
-          "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
-        ],
-        stockQuantity: 3,
-        featured: true,
-        averageRating: "4.8",
-        reviewCount: 47
-      },
-      {
-        name: "Stone Linen Loungewear Set",
-        description: "Stone-washed linen with relaxed fit and drawstring waist",
-        price: "8200.00",
-        salePrice: null,
-        category: "linen",
-        collection: "linen-loungewear",
-        fabric: "100% European Linen",
-        careInstructions: "Machine wash cold, tumble dry low",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["Stone", "Natural", "Sage Green"],
-        images: [
-          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
-        ],
-        stockQuantity: 15,
-        featured: true,
-        averageRating: "4.2",
-        reviewCount: 23
-      },
-      {
-        name: "Cream Cotton Night Dress",
-        description: "Soft organic cotton with delicate lace trim and cap sleeves",
-        price: "6800.00",
-        salePrice: null,
-        category: "cotton",
-        collection: "cotton-essentials",
-        fabric: "100% Organic Cotton",
-        careInstructions: "Machine wash warm, tumble dry medium",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["Cream", "White", "Light Pink"],
-        images: [
-          "https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
-        ],
-        stockQuantity: 8,
-        featured: true,
-        averageRating: "5.0",
-        reviewCount: 61
-      },
-      {
-        name: "Navy Silk Pajama Set",
-        description: "Classic navy silk with contrast ivory piping and mother-of-pearl buttons",
-        price: "14200.00",
-        salePrice: null,
-        category: "silk",
-        collection: "silk-collection",
-        fabric: "100% Mulberry Silk",
-        careInstructions: "Hand wash cold, hang dry, iron on low heat",
-        sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["Navy", "Midnight Blue", "Royal Blue"],
-        images: [
-          "https://pixabay.com/get/g2fb8c9c23b94786a76475e269efa1db216f5d3cf3f4a7ace2466260739eb7e364e01e5b7475f89011cec430dae3e46923e7b93a78bf9b9a80c7515125aa5ca72_1280.jpg",
-          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
-        ],
-        stockQuantity: 2,
-        featured: false,
-        averageRating: "4.5",
-        reviewCount: 34
-      },
-      {
-        name: "Sage Green Linen Shirt Set",
-        description: "Relaxed-fit linen shirt and shorts set perfect for lounging",
-        price: "7500.00",
-        salePrice: "6000.00",
-        category: "linen",
+        name: "Satin Night Dress - Sage",
+        description: "Luxurious satin slip dress with adjustable straps and lace trim. Perfect for elegant comfort.",
+        price: "8500.00",
+        salePrice: "6800.00",
+        category: "nightdress",
         collection: "new-arrivals",
-        fabric: "100% European Linen",
-        careInstructions: "Machine wash cold, air dry",
+        fabric: "Premium Satin",
+        careInstructions: "Hand wash cold, hang dry, cool iron if needed",
         sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["Sage Green", "Dusty Rose", "Cream"],
+        colors: ["Sage", "Blush", "Ivory"],
         images: [
           "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
           "https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
         ],
-        stockQuantity: 12,
+        stockQuantity: 4,
         featured: true,
-        averageRating: "4.7",
-        reviewCount: 19
+        averageRating: "4.9",
+        reviewCount: 67
       },
       {
-        name: "Cotton Modal Camisole Set",
-        description: "Breathable cotton-modal blend with adjustable straps",
-        price: "5200.00",
-        salePrice: null,
-        category: "cotton",
-        collection: "cotton-essentials",
-        fabric: "70% Cotton, 30% Modal",
-        careInstructions: "Machine wash warm, tumble dry low",
+        name: "Silk Pajama Set - Blush Pink",
+        description: "Premium Western-style silk pajama set with button-down top and matching shorts. Modern comfort meets timeless elegance.",
+        price: "15500.00",
+        salePrice: "12400.00",
+        category: "sets",
+        collection: "silk-collection",
+        fabric: "100% Mulberry Silk",
+        careInstructions: "Hand wash cold, hang dry, iron on low heat",
         sizes: ["XS", "S", "M", "L", "XL"],
-        colors: ["White", "Black", "Nude", "Light Blue"],
+        colors: ["Blush Pink", "Champagne", "Ivory"],
+        images: [
+          "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
+          "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+        ],
+        stockQuantity: 2,
+        featured: true,
+        averageRating: "4.8",
+        reviewCount: 43
+      },
+      {
+        name: "Cotton Luxury Robe",
+        description: "Oversized cotton terry robe with plush texture and spa-style comfort. Features deep pockets and matching belt.",
+        price: "9200.00",
+        salePrice: null,
+        category: "robes",
+        collection: "cotton-essentials",
+        fabric: "100% Turkish Cotton",
+        careInstructions: "Machine wash warm, tumble dry medium",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["Cream", "Stone", "Lavender"],
+        images: [
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
+          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+        ],
+        stockQuantity: 8,
+        featured: true,
+        averageRating: "4.6",
+        reviewCount: 32
+      },
+      {
+        name: "Linen Loungewear Set - Stone",
+        description: "Relaxed-fit linen set with wide-leg pants and oversized shirt. Perfect for comfortable lounging at home.",
+        price: "11200.00",
+        salePrice: null,
+        category: "loungewear", 
+        collection: "linen-collection",
+        fabric: "100% European Linen",
+        careInstructions: "Machine wash cold, tumble dry low, iron if needed",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["Stone", "Natural", "Sage"],
+        images: [
+          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+        ],
+        stockQuantity: 6,
+        featured: true,
+        averageRating: "4.7",
+        reviewCount: 28
+      },
+      {
+        name: "Velvet Kimono Robe - Lavender",
+        description: "Luxurious velvet kimono-style robe with wide sleeves and matching belt. Perfect for special occasions.",
+        price: "13800.00",
+        salePrice: "11040.00",
+        category: "robes",
+        collection: "sale",
+        fabric: "Crushed Velvet",
+        careInstructions: "Dry clean only or gentle hand wash",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["Lavender", "Deep Purple", "Burgundy"],
+        images: [
+          "https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
+          "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+        ],
+        stockQuantity: 5,
+        featured: false,
+        averageRating: "4.5",
+        reviewCount: 21
+      },
+      {
+        name: "Bamboo Modal Night Dress",
+        description: "Ultra-soft bamboo modal night dress with empire waist and flutter sleeves. Eco-friendly and breathable.",
+        price: "7200.00",
+        salePrice: null,
+        category: "nightdress",
+        collection: "cotton-essentials",
+        fabric: "Bamboo Modal Blend",
+        careInstructions: "Machine wash cold, tumble dry low",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["Sage", "Cream", "Dusty Pink"],
         images: [
           "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
           "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
         ],
-        stockQuantity: 20,
+        stockQuantity: 15,
         featured: false,
-        averageRating: "4.3",
-        reviewCount: 85
+        averageRating: "4.4",
+        reviewCount: 38
+      },
+      {
+        name: "Linen Shorts Pajama Set",
+        description: "Relaxed linen shorts set with button-down shirt. Perfect for warm weather lounging.",
+        price: "8900.00",
+        salePrice: null,
+        category: "sets",
+        collection: "new-arrivals",
+        fabric: "100% European Linen",
+        careInstructions: "Machine wash cold, air dry naturally",
+        sizes: ["XS", "S", "M", "L", "XL"],
+        colors: ["Natural", "Sage", "Stone"],
+        images: [
+          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+        ],
+        stockQuantity: 9,
+        featured: false,
+        averageRating: "4.6",
+        reviewCount: 42
       }
     ];
 
@@ -270,7 +290,7 @@ export class MemStorage implements IStorage {
       }
     }
 
-    return products.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    return products.sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 
   async getProduct(id: number): Promise<Product | undefined> {
@@ -288,7 +308,11 @@ export class MemStorage implements IStorage {
       id,
       createdAt: new Date(),
       averageRating: "0",
-      reviewCount: 0
+      reviewCount: 0,
+      salePrice: product.salePrice || null,
+      careInstructions: product.careInstructions || null,
+      stockQuantity: product.stockQuantity || 0,
+      featured: product.featured || null
     };
     this.products.set(id, newProduct);
     return newProduct;
@@ -297,7 +321,7 @@ export class MemStorage implements IStorage {
   async getProductReviews(productId: number): Promise<Review[]> {
     return Array.from(this.reviews.values())
       .filter(r => r.productId === productId)
-      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 
   async createReview(review: InsertReview): Promise<Review> {
@@ -305,7 +329,9 @@ export class MemStorage implements IStorage {
     const newReview: Review = {
       ...review,
       id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      title: review.title || null,
+      verified: review.verified || null
     };
     this.reviews.set(id, newReview);
     
@@ -341,7 +367,7 @@ export class MemStorage implements IStorage {
     );
 
     if (existingItem) {
-      existingItem.quantity += item.quantity;
+      existingItem.quantity += (item.quantity || 1);
       return existingItem;
     }
 
@@ -349,7 +375,8 @@ export class MemStorage implements IStorage {
     const newItem: CartItem = {
       ...item,
       id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      quantity: item.quantity || 1
     };
     this.cartItems.set(id, newItem);
     return newItem;
@@ -424,7 +451,9 @@ export class MemStorage implements IStorage {
       ...order,
       id: orderId,
       status: "pending",
-      createdAt: new Date()
+      createdAt: new Date(),
+      postalCode: order.postalCode || null,
+      shippingCost: order.shippingCost || "0"
     };
     this.orders.set(orderId, newOrder);
 

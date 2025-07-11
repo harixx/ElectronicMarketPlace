@@ -16,25 +16,28 @@ function HomeContent() {
 
   const collections = [
     {
-      name: "Silk Collection",
-      description: "Premium mulberry silk",
-      image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      href: "/products?category=silk",
-      price: "From Rs. 8,500"
+      name: "Nighties",
+      caption: "Dreamy Comfort",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
+      href: "/products?category=nightdress"
     },
     {
-      name: "Linen Loungewear",
-      description: "Stone-washed comfort",
-      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      href: "/products?category=linen",
-      price: "From Rs. 6,200"
+      name: "Sets",
+      caption: "Complete Elegance",
+      image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
+      href: "/products?category=sets"
     },
     {
-      name: "Cotton Essentials",
-      description: "Everyday comfort",
-      image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      href: "/products?category=cotton",
-      price: "From Rs. 4,800"
+      name: "Robes",
+      caption: "Luxurious Wrap",
+      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
+      href: "/products?category=robes"
+    },
+    {
+      name: "Loungewear",
+      caption: "Relaxed Sophistication",
+      image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
+      href: "/products?category=loungewear"
     }
   ];
 
@@ -76,22 +79,17 @@ function HomeContent() {
         
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-              Luxury Comfort<br />
+            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Premium Loungewear<br />
               <span className="text-gold">Redefined</span>
             </h2>
             <p className="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto opacity-90">
-              Discover our premium collection of silk pajamas, linen loungewear, and cotton essentials crafted for the modern woman
+              Elegant nightwear and loungewear crafted for the modern Pakistani woman
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-white px-8 py-4 rounded-full font-semibold">
-                <Link href="/products?collection=new-arrivals">
-                  <a>Shop New Collection</a>
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-full font-semibold">
                 <Link href="/products">
-                  <a>View All Products</a>
+                  <a>Shop Collection</a>
                 </Link>
               </Button>
             </div>
@@ -99,36 +97,38 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Featured Collections */}
+      {/* Featured Collections - 4-tile grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-4">
-              Featured Collections
+              Shop by Category
             </h2>
             <p className="text-stone text-lg max-w-2xl mx-auto">
-              Explore our carefully curated collections designed for ultimate comfort and elegance
+              Explore our curated collections
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {collections.map((collection, index) => (
+          {/* 4-tile grid: 2x2 on mobile, 4x1 on desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {collections.map((collection) => (
               <Link key={collection.name} href={collection.href}>
                 <a className="group block">
-                  <div className="relative overflow-hidden rounded-2xl h-96 mb-4">
-                    <img 
+                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-square mb-3">
+                    <img
                       src={collection.image}
                       alt={collection.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300" />
-                    <div className="absolute bottom-6 left-6 text-white">
-                      <h3 className="font-playfair text-2xl font-bold mb-2">{collection.name}</h3>
-                      <p className="text-sm opacity-90">{collection.description}</p>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="font-playfair text-xl font-bold mb-1">
+                        {collection.name}
+                      </h3>
+                      <p className="text-xs opacity-90">
+                        {collection.caption}
+                      </p>
                     </div>
-                  </div>
-                  <div className="text-center">
-                    <span className="text-gold font-semibold">{collection.price}</span>
                   </div>
                 </a>
               </Link>
@@ -137,15 +137,15 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-16 bg-gray-50">
+      {/* Social Proof Module - You May Like */}
+      <section className="py-16 bg-cream/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="font-playfair text-4xl font-bold text-charcoal mb-2">Featured Products</h2>
-              <p className="text-stone">Handpicked favorites loved by our customers</p>
+              <h2 className="font-playfair text-4xl font-bold text-charcoal mb-2">You May Like</h2>
+              <p className="text-stone">Top best-selling items with customer ratings</p>
             </div>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
               <Link href="/products">
                 <a className="flex items-center">
                   View All

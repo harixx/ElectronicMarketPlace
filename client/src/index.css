@@ -24,13 +24,14 @@
   --ring: hsl(45, 74%, 60%);
   --radius: 0.5rem;
   
-  /* Custom Elora colors */
-  --cream: hsl(36, 33%, 97%);
-  --blush: hsl(15, 30%, 85%);
-  --sage: hsl(85, 15%, 70%);
-  --gold: hsl(45, 74%, 60%);
-  --charcoal: hsl(0, 0%, 17%);
-  --stone: hsl(0, 0%, 42%);
+  /* Custom Elora colors - Neutral Pastel Palette */
+  --cream: hsl(45, 20%, 96%);
+  --blush: hsl(350, 25%, 85%);
+  --sage: hsl(90, 20%, 75%);
+  --lavender: hsl(260, 20%, 85%);
+  --gold: hsl(42, 40%, 70%);
+  --charcoal: hsl(220, 15%, 25%);
+  --stone: hsl(30, 8%, 52%);
 }
 
 .dark {
@@ -75,6 +76,26 @@
   .text-cream { color: var(--cream); }
   .text-blush { color: var(--blush); }
   .text-sage { color: var(--sage); }
+  .text-lavender { color: var(--lavender); }
+  .text-gold { color: var(--gold); }
+  .text-charcoal { color: var(--charcoal); }
+  .text-stone { color: var(--stone); }
+  
+  .bg-cream { background-color: var(--cream); }
+  .bg-blush { background-color: var(--blush); }
+  .bg-sage { background-color: var(--sage); }
+  .bg-lavender { background-color: var(--lavender); }
+  .bg-gold { background-color: var(--gold); }
+  .bg-charcoal { background-color: var(--charcoal); }
+  .bg-stone { background-color: var(--stone); }
+  
+  .border-cream { border-color: var(--cream); }
+  .border-blush { border-color: var(--blush); }
+  .border-sage { border-color: var(--sage); }
+  .border-lavender { border-color: var(--lavender); }
+  .border-gold { border-color: var(--gold); }
+  .border-charcoal { border-color: var(--charcoal); }
+  .border-stone { border-color: var(--stone); }
   .text-gold { color: var(--gold); }
   .text-charcoal { color: var(--charcoal); }
   .text-stone { color: var(--stone); }

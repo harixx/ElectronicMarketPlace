@@ -29,32 +29,36 @@ export function Header() {
   };
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "New Arrivals", href: "/products?collection=new-arrivals" },
-    { name: "Silk Collection", href: "/products?category=silk" },
-    { name: "Linen Loungewear", href: "/products?category=linen" },
-    { name: "Cotton Essentials", href: "/products?category=cotton" },
+    { name: "Nighties", href: "/products?category=nightdress" },
+    { name: "Sets", href: "/products?category=sets" },
+    { name: "Robes", href: "/products?category=robes" },
+    { name: "Loungewear", href: "/products?category=loungewear" },
+    { name: "Sale", href: "/products?collection=sale" },
   ];
 
   return (
     <>
       <header className="bg-white shadow-sm sticky top-0 z-50">
-        {/* Top Bar */}
-        <div className="border-b border-gray-100">
+        {/* Top Bar - Trust & Promo Bar */}
+        <div className="bg-sage/20 border-b border-sage/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2 text-sm text-stone">
-              <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-between py-2 text-sm text-charcoal">
+              <div className="flex items-center space-x-6">
                 <div className="flex items-center">
-                  <Truck className="w-4 h-4 mr-1" />
-                  <span>Free shipping on orders over Rs.3,000</span>
+                  <Truck className="w-4 h-4 mr-2 text-sage" />
+                  <span className="font-medium">Free shipping on orders over Rs.3,000</span>
                 </div>
                 <div className="hidden md:flex items-center">
-                  <Phone className="w-4 h-4 mr-1" />
-                  <span>+92-311-555-0610</span>
+                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
+                  <span>30-day returns</span>
+                </div>
+                <div className="hidden lg:flex items-center">
+                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
+                  <span>Secure payment options</span>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
-                <span className="text-xs">PKR</span>
+                <span className="text-xs font-medium">PKR</span>
               </div>
             </div>
           </div>
@@ -89,15 +93,16 @@ export function Header() {
                   {/* Mobile Navigation */}
                   <nav className="space-y-4">
                     {navigation.map((item) => (
-                      <Link
+                      <button
                         key={item.name}
-                        href={item.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={() => {
+                          navigate(item.href);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="block py-2 text-charcoal hover:text-gold transition-colors w-full text-left"
                       >
-                        <a className="block py-2 text-charcoal hover:text-gold transition-colors">
-                          {item.name}
-                        </a>
-                      </Link>
+                        {item.name}
+                      </button>
                     ))}
                   </nav>
                 </div>
@@ -135,33 +140,33 @@ export function Header() {
               <form onSubmit={handleSearch} className="relative hidden md:block">
                 <Input
                   type="text"
-                  placeholder="Search products..."
+                  placeholder="Search nightwear, sets, robes..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 pr-10"
+                  className="w-72 pr-10 border-sage/30 focus:border-gold"
                 />
-                <Button type="submit" size="sm" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0">
+                <Button type="submit" size="sm" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-gold hover:bg-gold/90">
                   <Search className="h-4 w-4" />
                 </Button>
               </form>
 
               {/* User Account */}
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="hover:bg-sage/20">
                 <User className="h-5 w-5" />
               </Button>
 
               {/* Wishlist */}
-              <Button variant="ghost" size="sm" className="relative">
+              <Button variant="ghost" size="sm" className="relative hover:bg-sage/20">
                 <Heart className="h-5 w-5" />
                 {wishlistCount > 0 && (
-                  <Badge variant="secondary" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-gold text-white">
+                  <Badge variant="secondary" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-blush text-charcoal">
                     {wishlistCount}
                   </Badge>
                 )}
               </Button>
 
               {/* Shopping Cart */}
-              <Button variant="ghost" size="sm" className="relative" onClick={() => setIsCartOpen(true)}>
+              <Button variant="ghost" size="sm" className="relative hover:bg-sage/20" onClick={() => setIsCartOpen(true)}>
                 <ShoppingBag className="h-5 w-5" />
                 {itemCount > 0 && (
                   <Badge variant="secondary" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-gold text-white">
@@ -173,6 +178,24 @@ export function Header() {
           </div>
         </div>
       </header>
+
+      {/* Mobile Sticky Search Bar */}
+      {isMobile && (
+        <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-sage/20 px-4 py-2">
+          <form onSubmit={handleSearch} className="relative">
+            <Input
+              type="text"
+              placeholder="Search nightwear, sets, robes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pr-10 border-sage/30 focus:border-gold"
+            />
+            <Button type="submit" size="sm" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0 bg-gold hover:bg-gold/90">
+              <Search className="h-4 w-4" />
+            </Button>
+          </form>
+        </div>
+      )}
 
       {/* Cart Sidebar */}
       <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />

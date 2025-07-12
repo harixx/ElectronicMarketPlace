@@ -364,7 +364,7 @@ function HomeContent() {
             </div>
             <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
               <Link href="/products">
-                <a className="flex items-center">
+                <a className="flex items-center bg-[#4d0404]">
                   Shop All Bestsellers
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>

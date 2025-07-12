@@ -409,18 +409,17 @@ function HomeContent() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-[#fdb51c] hover:bg-[#fdb51c]/90 text-black px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all"
-              >
-                <Link href="/products">
+              <Link href="/products">
+                <Button 
+                  size="lg" 
+                  className="bg-[#fdb51c] hover:bg-[#fdb51c]/90 text-black px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all"
+                >
                   <div className="flex items-center">
                     Explore Collection
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </div>
-                </Link>
-              </Button>
+                </Button>
+              </Link>
               
               <Button 
                 variant="outline" 
@@ -642,14 +641,14 @@ function HomeContent() {
               </h2>
               <p className="text-stone">These bestsellers are flying off our shelves - grab yours before they're gone!</p>
             </div>
-            <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white bg-[#4d0404]">
-              <Link href="/products">
-                <a className="flex items-center">
+            <Link href="/products">
+              <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white bg-[#4d0404]">
+                <div className="flex items-center">
                   Shop All Bestsellers
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </Link>
-            </Button>
+                </div>
+              </Button>
+            </Link>
           </div>
 
           <DynamicGallery />

@@ -52,11 +52,11 @@ export function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
             <p className="text-gray-500 text-center mb-6">
               Looks like you haven't added any items to your cart yet.
             </p>
-            <Button onClick={onClose} asChild>
-              <Link href="/products">
-                <a>Continue Shopping</a>
-              </Link>
-            </Button>
+            <Link href="/products">
+              <Button onClick={onClose}>
+                Continue Shopping
+              </Button>
+            </Link>
           </div>
         ) : (
           <div className="flex flex-col h-full">
@@ -167,16 +167,16 @@ export function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
               </div>
               
               <div className="space-y-3">
-                <Button className="w-full bg-gold hover:bg-gold/90 text-white" asChild>
-                  <Link href="/checkout">
-                    <a onClick={onClose}>Proceed to Checkout</a>
-                  </Link>
-                </Button>
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href="/cart">
-                    <a onClick={onClose}>View Cart</a>
-                  </Link>
-                </Button>
+                <Link href="/checkout">
+                  <Button className="w-full bg-gold hover:bg-gold/90 text-white" onClick={onClose}>
+                    Proceed to Checkout
+                  </Button>
+                </Link>
+                <Link href="/cart">
+                  <Button variant="outline" className="w-full" onClick={onClose}>
+                    View Cart
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

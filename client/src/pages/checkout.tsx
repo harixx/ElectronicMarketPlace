@@ -156,11 +156,11 @@ function CheckoutContent() {
             <p className="text-stone text-lg mb-8">
               Please add items to your cart before proceeding to checkout.
             </p>
-            <Button asChild size="lg" className="bg-gold hover:bg-gold/90">
-              <Link href="/products">
-                <a>Continue Shopping</a>
-              </Link>
-            </Button>
+            <Link href="/products">
+              <Button size="lg" className="bg-gold hover:bg-gold/90">
+                Continue Shopping
+              </Button>
+            </Link>
           </div>
         </div>
         <Footer />

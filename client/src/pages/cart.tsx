@@ -53,11 +53,11 @@ function CartContent() {
               Looks like you haven't added anything to your cart yet.
             </p>
             <div className="space-y-4">
-              <Button asChild size="lg" className="bg-gold hover:bg-gold/90">
-                <Link href="/products">
-                  <a>Continue Shopping</a>
-                </Link>
-              </Button>
+              <Link href="/products">
+                <Button size="lg" className="bg-gold hover:bg-gold/90">
+                  Continue Shopping
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -81,14 +81,12 @@ function CartContent() {
               {itemCount} item{itemCount !== 1 ? 's' : ''} in your cart
             </p>
           </div>
-          <Button variant="outline" asChild>
-            <Link href="/products">
-              <a className="flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Continue Shopping
-              </a>
-            </Link>
-          </Button>
+          <Link href="/products">
+            <Button variant="outline" className="flex items-center">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Continue Shopping
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -277,11 +275,11 @@ function CartContent() {
                 </div>
                 
                 <div className="mt-6 space-y-4">
-                  <Button asChild size="lg" className="w-full bg-gold hover:bg-gold/90">
-                    <Link href="/checkout">
-                      <a>Proceed to Checkout</a>
-                    </Link>
-                  </Button>
+                  <Link href="/checkout">
+                    <Button size="lg" className="w-full bg-gold hover:bg-gold/90">
+                      Proceed to Checkout
+                    </Button>
+                  </Link>
                   
                   <div className="text-center">
                     <Link href="/products">

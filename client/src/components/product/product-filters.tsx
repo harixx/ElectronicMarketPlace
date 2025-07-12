@@ -169,12 +169,12 @@ export function ProductFiltersComponent({ filters, onFiltersChange, onClearFilte
 
       {/* Quick Filters */}
       <div className="flex flex-wrap gap-2 mt-4 lg:hidden">
-        <Select value={filters.category || ""} onValueChange={(value) => onFiltersChange({ ...filters, category: value || undefined })}>
+        <Select value={filters.category || "all"} onValueChange={(value) => onFiltersChange({ ...filters, category: value === "all" ? undefined : value })}>
           <SelectTrigger className="w-auto">
             <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Categories</SelectItem>
+            <SelectItem value="all">All Categories</SelectItem>
             {categories.map((category) => (
               <SelectItem key={category.value} value={category.value}>
                 {category.label}
@@ -183,12 +183,12 @@ export function ProductFiltersComponent({ filters, onFiltersChange, onClearFilte
           </SelectContent>
         </Select>
 
-        <Select value={filters.collection || ""} onValueChange={(value) => onFiltersChange({ ...filters, collection: value || undefined })}>
+        <Select value={filters.collection || "all"} onValueChange={(value) => onFiltersChange({ ...filters, collection: value === "all" ? undefined : value })}>
           <SelectTrigger className="w-auto">
             <SelectValue placeholder="Collection" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Collections</SelectItem>
+            <SelectItem value="all">All Collections</SelectItem>
             {collections.map((collection) => (
               <SelectItem key={collection.value} value={collection.value}>
                 {collection.label}

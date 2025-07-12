@@ -43,7 +43,7 @@ export interface CheckoutFormData {
   address: string;
   city: string;
   postalCode?: string;
-  paymentMethod: 'cod' | 'bank-transfer' | 'jazzcash' | 'easypaisa';
+  paymentMethod: 'cod' | 'bank-transfer';
 }
 
 export interface OrderData {

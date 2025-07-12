@@ -28,7 +28,7 @@ const checkoutSchema = z.object({
   address: z.string().min(10, "Please enter a complete address"),
   city: z.string().min(2, "Please enter your city"),
   postalCode: z.string().optional(),
-  paymentMethod: z.enum(["cod", "bank-transfer", "jazzcash", "easypaisa"], {
+  paymentMethod: z.enum(["cod", "bank-transfer"], {
     required_error: "Please select a payment method",
   }),
 });
@@ -131,18 +131,6 @@ function CheckoutContent() {
       name: "Bank Transfer",
       description: "Direct bank transfer",
       icon: CreditCard,
-    },
-    {
-      id: "jazzcash",
-      name: "JazzCash",
-      description: "Mobile wallet payment",
-      icon: Phone,
-    },
-    {
-      id: "easypaisa",
-      name: "EasyPaisa",
-      description: "Mobile wallet payment",
-      icon: Phone,
     },
   ];
 

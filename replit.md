@@ -10,12 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-**July 12, 2025 - Complete DOM Validation Resolution**
+**July 12, 2025 - Complete DOM Validation Resolution & Payment Methods Update**
 - Successfully migrated project from Replit Agent to Replit environment
 - Fixed all nested anchor tag issues causing DOM validation warnings
 - Resolved Button component structure using proper Link wrapping instead of asChild prop
 - Fixed SelectItem components by updating empty values to "all" for category and collection filters
 - Implemented proper filter logic to handle "all" values correctly
+- Updated payment methods to only include Cash on Delivery and Bank Transfer (removed JazzCash and EasyPaisa)
+- Updated checkout form validation and type definitions to match simplified payment options
 - All routes (/, /products, /cart, /checkout, /api/products) now returning 200 status codes
 - Application fully functional with no console errors or DOM validation warnings
 - Golden button styling maintained with proper transparency and black text

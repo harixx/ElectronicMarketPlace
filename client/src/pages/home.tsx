@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "@/components/product/product-card";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { CartProvider } from "@/hooks/use-cart";
 import { WishlistProvider } from "@/hooks/use-wishlist";
 import { Product } from "@shared/schema";
@@ -195,12 +197,18 @@ function HomeContent() {
               </div>
             </div>
             
-            <div className="relative">
-              <img
-                src={pajamaSetImage}
-                alt="ELORA Quality"
-                className="rounded-2xl shadow-2xl"
-              />
+            <div className="relative group">
+              <div className="overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-gray-100 to-gray-200">
+                <img
+                  src={pajamaSetImage}
+                  alt="ELORA Premium Quality Pajama Sets - Pakistani Loungewear"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  style={{
+                    filter: 'brightness(1.05) contrast(1.1) saturate(1.1)', // Enhanced visual appeal
+                  }}
+                />
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg max-w-xs">
                 <div className="flex items-center mb-2">
                   <div className="flex text-gold">
@@ -232,28 +240,43 @@ function HomeContent() {
             </p>
           </div>
 
-          {/* 4-tile grid: 2x2 on mobile, 4x1 on desktop */}
+          {/* Enhanced 4-tile grid with modern image techniques */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {collections.map((collection) => (
+            {collections.map((collection, index) => (
               <Link key={collection.name} href={collection.href}>
-                <a className="group block">
-                  <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-square mb-3">
+                <div className="group block cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 aspect-square mb-3 shadow-lg group-hover:shadow-2xl transition-all duration-300">
                     <img
                       src={collection.image}
-                      alt={collection.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      alt={`${collection.name} - ${collection.caption}`}
+                      loading={index > 1 ? "lazy" : "eager"} // Lazy load images below the fold
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      style={{
+                        filter: 'brightness(0.9) contrast(1.1)', // Enhanced image quality
+                      }}
                     />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="font-playfair text-xl font-bold mb-1">
-                        {collection.name}
-                      </h3>
-                      <p className="text-xs opacity-90">
-                        {collection.caption}
-                      </p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:from-black/70 transition-all duration-300" />
+                    
+                    {/* Modern floating label */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20">
+                        <h3 className="font-playfair text-lg font-bold mb-1 text-white">
+                          {collection.name}
+                        </h3>
+                        <p className="text-xs text-white/90 opacity-90">
+                          {collection.caption}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 border border-white/30">
+                        <ArrowRight className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
-                </a>
+                </div>
               </Link>
             ))}
           </div>
@@ -496,6 +519,8 @@ function HomeContent() {
       </section>
 
       <Footer />
+      <FloatingWhatsApp />
+      <ScrollToTop />
     </div>
   );
 }

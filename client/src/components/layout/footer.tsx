@@ -202,10 +202,10 @@ export function Footer() {
                 <div className="flex items-center justify-center px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all bg-[#4d0404]">
                   <span className="text-royal-cream/90 text-sm">🏦 Bank Transfer</span>
                 </div>
-                <div className="flex items-center justify-center bg-royal-cream/10 px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all">
+                <div className="flex items-center justify-center px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all bg-[#4d0404]">
                   <span className="text-royal-cream/90 text-sm">📱 JazzCash</span>
                 </div>
-                <div className="flex items-center justify-center bg-royal-cream/10 px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all">
+                <div className="flex items-center justify-center px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all bg-[#4d0404]">
                   <span className="text-royal-cream/90 text-sm">💸 EasyPaisa</span>
                 </div>
               </div>

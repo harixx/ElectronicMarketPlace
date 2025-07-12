@@ -8,7 +8,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gradient-royal text-royal-cream relative overflow-hidden">
+    <footer className="bg-[#fdb51c] text-royal-cream relative overflow-hidden">
       {/* Elegant Background Pattern with Royal Touch */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-royal-gold rounded-full animate-pulse"></div>

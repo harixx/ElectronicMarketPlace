@@ -31,12 +31,16 @@ import productImage2 from "@assets/image_1752312142189.png";
 import productImage3 from "@assets/image_1752312154975.png";
 import productImage4 from "@assets/image_1752312175740.png";
 import productImage5 from "@assets/image_1752312190588.png";
-import loungewearVideo from "@assets/website_video_1752312335308.webm";
+import loungewearVideo from "@assets/stock-footage-young-transgender-woman-in-nightwear-putting-on-duvet-while-lying-in-bed-as-she-prepares-herself_1752315711771.webm";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products/featured"],
   });
+
+  // Video state management for fallback
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Gallery images with product details and pricing - Individual product showcase
   const galleryImages = [
@@ -354,24 +358,38 @@ function HomeContent() {
 
       {/* Cinematic Video Showcase */}
       <section className="relative h-screen overflow-hidden bg-black">
-        {/* Video Background */}
+        {/* Video Background with Fallback */}
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-            poster={heroImage}
-          >
-            <source src={loungewearVideo} type="video/webm" />
-            {/* Fallback for browsers that don't support video */}
-            <img 
-              src={heroImage} 
-              alt="ELORA Loungewear Collection" 
+          {!videoError ? (
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-full object-cover"
+              poster={heroImage}
+              onError={() => setVideoError(true)}
+              onLoadStart={() => {
+                // Check if video can be played
+                if (videoRef.current) {
+                  videoRef.current.addEventListener('error', () => setVideoError(true));
+                }
+              }}
+            >
+              <source src={loungewearVideo} type="video/webm" />
+              {/* Fallback for browsers that don't support video */}
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            /* Fallback to hero image if video fails to load */
+            <div 
+              className="w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
+              }}
             />
-          </video>
+          )}
         </div>
 
         {/* Video Overlay Content */}

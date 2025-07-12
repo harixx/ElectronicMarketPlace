@@ -26,28 +26,65 @@ import galleryImage7 from "@assets/image_1752309298739.png";
 import galleryImage8 from "@assets/image_1752309315972.png";
 import galleryImage9 from "@assets/image_1752311340735.png";
 import galleryImage10 from "@assets/image_1752311590457.png";
+import productImage1 from "@assets/image_1752312131145.png";
+import productImage2 from "@assets/image_1752312142189.png";
+import productImage3 from "@assets/image_1752312154975.png";
+import productImage4 from "@assets/image_1752312175740.png";
+import productImage5 from "@assets/image_1752312190588.png";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products/featured"],
   });
 
-  // Gallery images with product details - Individual product showcase
+  // Gallery images with product details and pricing - Individual product showcase
   const galleryImages = [
-    { src: galleryImage1, alt: "ELORA Luxury Striped Pajama Set - Black Gold Stripes", title: "Luxury Striped Set" },
-    { src: galleryImage2, alt: "ELORA Premium Burgundy Striped Loungewear", title: "Burgundy Stripes" },
-    { src: galleryImage3, alt: "ELORA Floral Print Loungewear - Elegant Garden Design", title: "Garden Florals" },
-    { src: galleryImage4, alt: "ELORA Cozy Oversized Loungewear - Ultimate Comfort", title: "Cozy Oversized" },
-    { src: galleryImage5, alt: "ELORA Black Floral Print Pajamas - Sophisticated Style", title: "Black Florals" },
-    { src: galleryImage6, alt: "ELORA Brown Floral Robe - Luxurious Morning Wear", title: "Brown Floral Robe" },
-    { src: galleryImage7, alt: "ELORA Turquoise Silk Pajamas - Premium Comfort", title: "Turquoise Silk" },
-    { src: galleryImage8, alt: "ELORA Navy Pinstripe Set - Classic Elegance", title: "Navy Pinstripes" },
-    { src: galleryImage9, alt: "ELORA Blush Pink Loungewear - Soft Feminine Style", title: "Blush Pink Set" },
-    { src: galleryImage10, alt: "ELORA Navy Polka Dot Pajamas - Timeless Design", title: "Navy Polka Dots" },
-    { src: pajamaSetImage, alt: "ELORA Premium Pajama Sets - Complete Comfort", title: "Premium Sets" },
-    { src: silkLoungeImage, alt: "ELORA Silk Collection - Luxurious Elegance", title: "Silk Collection" },
-    { src: cottonSetImage, alt: "ELORA Cotton Loungewear - Breathable Style", title: "Cotton Comfort" },
-    { src: heroImage, alt: "ELORA Hero Collection - Premium Nightwear", title: "Hero Collection" },
+    { 
+      src: productImage1, 
+      alt: "ELORA Nap Queen Linen Pajama Set - Premium Red Floral", 
+      title: "Nap Queen Linen", 
+      price: "Rs. 1,498.00",
+      originalPrice: "Rs. 2,500.00",
+      category: "Linen Collection"
+    },
+    { 
+      src: productImage2, 
+      alt: "ELORA Bloom & Snooze Linen Set - Red Cherry Blossom", 
+      title: "Bloom & Snooze Linen", 
+      price: "Rs. 1,200.00",
+      category: "Linen Collection"
+    },
+    { 
+      src: productImage3, 
+      alt: "ELORA Mossy Mixed Linen Set - Navy Botanical Print", 
+      title: "Mossy Mixed Linen", 
+      price: "Rs. 1,267.00",
+      originalPrice: "Rs. 1,890.00",
+      category: "Linen Collection"
+    },
+    { 
+      src: productImage4, 
+      alt: "ELORA Blush Mirage Linen Set - Red Palm Print", 
+      title: "Blush Mirage Linen", 
+      price: "Rs. 1,249.00",
+      originalPrice: "Rs. 1,850.00",
+      category: "Linen Collection"
+    },
+    { 
+      src: productImage5, 
+      alt: "ELORA Forest Linen Set - Dark Green Floral", 
+      title: "Forest Linen Set", 
+      price: "Rs. 1,550.00",
+      originalPrice: "Rs. 2,200.00",
+      category: "Linen Collection"
+    },
+    { src: galleryImage1, alt: "ELORA Luxury Striped Pajama Set", title: "Luxury Striped Set", price: "Rs. 1,800.00", category: "Silk Collection" },
+    { src: galleryImage2, alt: "ELORA Premium Burgundy Striped Loungewear", title: "Burgundy Stripes", price: "Rs. 1,650.00", category: "Cotton Collection" },
+    { src: galleryImage3, alt: "ELORA Floral Print Loungewear", title: "Garden Florals", price: "Rs. 1,400.00", category: "Cotton Collection" },
+    { src: galleryImage4, alt: "ELORA Cozy Oversized Loungewear", title: "Cozy Oversized", price: "Rs. 1,350.00", category: "Cotton Collection" },
+    { src: galleryImage5, alt: "ELORA Black Floral Print Pajamas", title: "Black Florals", price: "Rs. 1,750.00", category: "Silk Collection" },
+    { src: pajamaSetImage, alt: "ELORA Premium Pajama Sets", title: "Premium Sets", price: "Rs. 2,200.00", category: "Premium Collection" },
+    { src: silkLoungeImage, alt: "ELORA Silk Collection", title: "Silk Collection", price: "Rs. 2,500.00", category: "Silk Collection" },
   ];
 
   // Dynamic Gallery Component
@@ -142,19 +179,32 @@ function HomeContent() {
                 draggable={false}
                 style={{ userSelect: 'none' }}
               />
-              {/* Product title overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white font-semibold text-lg">{image.title}</h3>
-                <p className="text-white/80 text-sm">Premium Loungewear</p>
+              {/* Product info overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-white space-y-1">
+                  <h3 className="font-semibold text-lg">{image.title}</h3>
+                  <p className="text-white/80 text-sm">{image.category}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#fdb51c] font-bold text-lg">{image.price}</span>
+                    {image.originalPrice && (
+                      <span className="text-white/60 line-through text-sm">{image.originalPrice}</span>
+                    )}
+                  </div>
+                </div>
               </div>
-              {/* Featured badge for first few items */}
-              {index < 4 && (
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-[#4d0404] text-white px-3 py-1 text-xs font-semibold">
+              {/* Special badges */}
+              <div className="absolute top-4 left-4 space-y-2">
+                {index < 5 && (
+                  <Badge className="bg-[#4d0404] text-white px-3 py-1 text-xs font-semibold block">
                     FEATURED
                   </Badge>
-                </div>
-              )}
+                )}
+                {image.originalPrice && (
+                  <Badge className="bg-red-600 text-white px-3 py-1 text-xs font-semibold block">
+                    SALE
+                  </Badge>
+                )}
+              </div>
             </div>
           ))}
         </div>

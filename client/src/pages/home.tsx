@@ -411,7 +411,7 @@ function HomeContent() {
       </section>
       {/* Final Call to Action - Irresistible Offer */}
       <section className="py-20 bg-gradient-to-r from-sage to-sage/80 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-[#4d0404]" />
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#4d0404]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

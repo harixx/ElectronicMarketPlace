@@ -171,7 +171,7 @@ function HomeContent() {
                 Every Pakistani Woman Deserves to Feel
                 <span className="text-gold"> Extraordinary</span>
               </h2>
-              <p className="text-lg text-stone mb-6 leading-relaxed">
+              <p className="text-lg mb-6 leading-relaxed text-[#ffffff]">
                 Born from the belief that comfort shouldn't compromise elegance, ELORA creates 
                 premium loungewear for the modern Pakistani woman who values quality, style, and sophistication.
               </p>

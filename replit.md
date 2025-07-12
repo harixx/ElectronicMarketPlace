@@ -8,6 +8,15 @@ This is a modern e-commerce platform for ELORA, a premium loungewear and nightwe
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**July 12, 2025 - Migration and DOM Validation Fixes**
+- Successfully migrated project from Replit Agent to Replit environment
+- Fixed nested anchor tag issues causing DOM validation warnings
+- Resolved Button component structure using proper Link wrapping instead of asChild prop
+- All routes (/, /products, /cart, /api/products) now returning 200 status codes
+- Application fully functional with no console errors
+
 ## System Architecture
 
 ### Frontend Architecture

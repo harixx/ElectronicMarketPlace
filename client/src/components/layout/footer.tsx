@@ -196,7 +196,7 @@ export function Footer() {
             <div className="mb-8">
               <h4 className="font-semibold text-lg mb-6 text-royal-gold text-center text-shadow-soft">Secure Payment Options</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <div className="flex items-center justify-center bg-royal-cream/10 px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all">
+                <div className="flex items-center justify-center px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all bg-[#4d0404]">
                   <span className="text-royal-cream/90 text-sm">💳 Cash on Delivery</span>
                 </div>
                 <div className="flex items-center justify-center px-4 py-3 rounded-lg border border-royal-gold/20 hover:bg-royal-cream/20 transition-all bg-[#4d0404]">

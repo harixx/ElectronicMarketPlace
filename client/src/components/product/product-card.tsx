@@ -55,37 +55,37 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <img 
               src={product.images[0]} 
               alt={product.name}
-              className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500 image-zoom"
+              className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-500 image-zoom"
             />
             
-            {/* Quick Actions */}
-            <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* Quick Actions - Responsive */}
+            <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex flex-col space-y-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <Button
                 size="sm"
                 variant="secondary"
-                className="w-10 h-10 rounded-full p-0 bg-white shadow-md hover:bg-gold hover:text-white"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full p-0 bg-white shadow-md hover:bg-royal-gold hover:text-white"
                 onClick={handleWishlistToggle}
               >
-                <Heart className={cn("w-4 h-4", isInWishlist(product.id) && "fill-current text-red-500")} />
+                <Heart className={cn("w-3 h-3 sm:w-4 sm:h-4", isInWishlist(product.id) && "fill-current text-red-500")} />
               </Button>
               <Button
                 size="sm"
                 variant="secondary"
-                className="w-10 h-10 rounded-full p-0 bg-white shadow-md hover:bg-gold hover:text-white"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full p-0 bg-white shadow-md hover:bg-royal-gold hover:text-white"
               >
-                <Eye className="w-4 h-4" />
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </div>
             
-            {/* Badges */}
-            <div className="absolute top-4 left-4 flex flex-col space-y-2">
+            {/* Badges - Responsive */}
+            <div className="absolute top-2 sm:top-4 left-2 sm:left-4 flex flex-col space-y-1 sm:space-y-2">
               {discount > 0 && (
-                <Badge className="bg-gold text-white">
+                <Badge className="bg-royal-gold text-white text-xs px-2 py-1">
                   {discount}% OFF
                 </Badge>
               )}
               {product.featured && (
-                <Badge variant="secondary" className="bg-sage text-white">
+                <Badge variant="secondary" className="bg-royal-navy text-royal-cream text-xs px-2 py-1">
                   FEATURED
                 </Badge>
               )}
@@ -108,20 +108,20 @@ export function ProductCard({ product, className }: ProductCardProps) {
             )}
           </div>
           
-          <div className="p-6">
-            <div className="mb-3">
-              <h3 className="font-medium text-charcoal mb-1 line-clamp-1">{product.name}</h3>
-              <p className="text-sm text-stone line-clamp-2">{product.description}</p>
+          <div className="p-3 sm:p-4 lg:p-6">
+            <div className="mb-2 sm:mb-3">
+              <h3 className="font-medium text-royal-navy mb-1 text-sm sm:text-base line-clamp-1">{product.name}</h3>
+              <p className="text-xs sm:text-sm text-stone line-clamp-2">{product.description}</p>
             </div>
             
-            {/* Rating */}
-            <div className="flex items-center mb-3">
-              <div className="flex text-gold">
+            {/* Rating - Responsive */}
+            <div className="flex items-center mb-2 sm:mb-3">
+              <div className="flex text-royal-gold">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     className={cn(
-                      "w-4 h-4",
+                      "w-3 h-3 sm:w-4 sm:h-4",
                       i < Math.floor(parseFloat(product.averageRating))
                         ? "fill-current"
                         : "stroke-current"
@@ -132,24 +132,24 @@ export function ProductCard({ product, className }: ProductCardProps) {
               <span className="text-xs text-stone ml-2">({product.reviewCount} reviews)</span>
             </div>
             
-            {/* Price */}
-            <div className="flex items-center justify-between mb-4">
+            {/* Price - Responsive */}
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div className="flex items-center space-x-2">
-                <span className="text-lg font-bold text-charcoal">
+                <span className="text-base sm:text-lg font-bold text-royal-navy">
                   Rs. {currentPrice.toLocaleString()}
                 </span>
                 {product.salePrice && (
-                  <span className="text-sm text-stone line-through">
+                  <span className="text-xs sm:text-sm text-stone line-through">
                     Rs. {originalPrice.toLocaleString()}
                   </span>
                 )}
               </div>
             </div>
             
-            {/* Size Selection */}
-            <div className="mb-4">
+            {/* Size Selection - Responsive */}
+            <div className="mb-3 sm:mb-4">
               <p className="text-xs text-stone mb-2">Size:</p>
-              <div className="flex space-x-2">
+              <div className="flex flex-wrap gap-1 sm:gap-2">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
@@ -159,10 +159,10 @@ export function ProductCard({ product, className }: ProductCardProps) {
                       setSelectedSize(size);
                     }}
                     className={cn(
-                      "w-8 h-8 border rounded text-xs transition-colors",
+                      "w-7 h-7 sm:w-8 sm:h-8 border rounded text-xs transition-colors",
                       selectedSize === size
-                        ? "border-gold bg-gold text-white"
-                        : "border-gray-300 hover:border-gold"
+                        ? "border-royal-gold bg-royal-gold text-white"
+                        : "border-gray-300 hover:border-royal-gold"
                     )}
                   >
                     {size}
@@ -171,11 +171,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
               </div>
             </div>
             
-            {/* Color Selection */}
+            {/* Color Selection - Responsive */}
             {product.colors.length > 1 && (
-              <div className="mb-4">
+              <div className="mb-3 sm:mb-4">
                 <p className="text-xs text-stone mb-2">Color:</p>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
                   {product.colors.slice(0, 3).map((color) => (
                     <button
                       key={color}
@@ -185,9 +185,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
                         setSelectedColor(color);
                       }}
                       className={cn(
-                        "w-6 h-6 rounded-full border-2 transition-all",
+                        "w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 transition-all",
                         selectedColor === color
-                          ? "border-gold scale-110"
+                          ? "border-royal-gold scale-110"
                           : "border-gray-300"
                       )}
                       style={{
@@ -209,9 +209,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
               </div>
             )}
             
-            {/* Add to Cart */}
+            {/* Add to Cart - Responsive */}
             <Button 
-              className="w-full bg-charcoal text-white hover:bg-gray-800 transition-colors"
+              className="w-full bg-royal-navy text-royal-cream hover:bg-royal-purple transition-colors text-sm sm:text-base py-2 sm:py-3"
               onClick={handleAddToCart}
               disabled={cartLoading || product.stockQuantity === 0}
             >

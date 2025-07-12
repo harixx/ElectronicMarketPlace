@@ -74,12 +74,12 @@ function HomeContent() {
   return (
     <div className="min-h-screen bg-cream">
       <Header />
-      {/* Hero Section with Enhanced Hook */}
-      <section className="relative h-screen overflow-hidden">
+      {/* Hero Section - Fully Responsive with Royal Colors */}
+      <section className="relative h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:h-screen overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`
+            backgroundImage: `linear-gradient(rgba(88, 88, 150, 0.7), rgba(45, 55, 72, 0.6)), url(/attached_assets/image_1752309298739.png)`
           }}
         />
         
@@ -237,8 +237,8 @@ function HomeContent() {
             </p>
           </div>
 
-          {/* Enhanced 4-tile grid with modern image techniques */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Fully Responsive Collections Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {collections.map((collection, index) => (
               <Link key={collection.name} href={collection.href}>
                 <div className="group block cursor-pointer">

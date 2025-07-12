@@ -81,8 +81,8 @@ export class MemStorage implements IStorage {
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["Sage", "Blush", "Ivory"],
         images: [
-          "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+          "/attached_assets/image_1752309158083.png",
+          "/attached_assets/image_1752309298739.png"
         ],
         stockQuantity: 4,
         featured: true,
@@ -101,8 +101,8 @@ export class MemStorage implements IStorage {
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["Blush Pink", "Champagne", "Ivory"],
         images: [
-          "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+          "/attached_assets/image_1752309298739.png",
+          "/attached_assets/image_1752309315972.png"
         ],
         stockQuantity: 2,
         featured: true,
@@ -121,8 +121,8 @@ export class MemStorage implements IStorage {
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["Cream", "Stone", "Lavender"],
         images: [
-          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+          "/attached_assets/image_1752309315972.png",
+          "/attached_assets/image_1752309298739.png"
         ],
         stockQuantity: 8,
         featured: true,
@@ -141,8 +141,8 @@ export class MemStorage implements IStorage {
         sizes: ["XS", "S", "M", "L", "XL"],
         colors: ["Stone", "Natural", "Sage"],
         images: [
-          "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000",
-          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000"
+          "/attached_assets/image_1752309158083.png",
+          "/attached_assets/image_1752309315972.png"
         ],
         stockQuantity: 6,
         featured: true,

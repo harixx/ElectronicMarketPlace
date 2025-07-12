@@ -477,7 +477,7 @@ function HomeContent() {
             <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">
               Customer Love
             </Badge>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-4">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-[#ffffff]">
               What Our Customers Say
             </h2>
             <p className="text-stone text-lg max-w-2xl mx-auto">

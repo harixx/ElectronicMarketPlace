@@ -487,47 +487,11 @@ function HomeContent() {
             </Button>
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="animate-pulse">
-                  <div className="bg-gray-200 h-80 rounded-2xl mb-4" />
-                  <div className="space-y-2">
-                    <div className="h-4 bg-gray-200 rounded" />
-                    <div className="h-4 bg-gray-200 rounded w-3/4" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {featuredProducts.slice(0, 4).map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Dynamic Product Gallery */}
-      <section className="py-20 bg-gradient-to-br from-cream to-blush/30">
-        <div className="max-w-full mx-auto">
-          <div className="text-center mb-12 px-4">
-            <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">
-              <Heart className="w-4 h-4 mr-2" />
-              Gallery
-            </Badge>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-4">
-              Discover Our Collection
-            </h2>
-            <p className="text-stone text-lg max-w-2xl mx-auto mb-8">
-              Drag to explore our premium loungewear collection - each piece crafted for comfort and elegance
-            </p>
-          </div>
-          
           <DynamicGallery />
         </div>
       </section>
+
+
 
       {/* Features */}
       <section className="py-16 bg-white">

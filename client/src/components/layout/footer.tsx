@@ -28,7 +28,7 @@ export function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 bg-royal-cream/20 border-royal-gold/30 text-royal-cream placeholder:text-royal-cream/60 focus:border-royal-gold focus:bg-royal-cream/30"
               />
-              <Button className="bg-royal-gold hover:bg-gold text-royal-navy px-6 py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+              <Button className="hover:bg-gold px-6 py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all bg-[#4d0404] text-[#f0f0f0]">
                 Subscribe
               </Button>
             </div>

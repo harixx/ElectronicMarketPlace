@@ -113,3 +113,31 @@ Preferred communication style: Simple, everyday language.
 - Custom Vite plugins for Replit development environment
 - Runtime error overlay for better debugging experience
 - Cartographer integration for enhanced development tools
+
+## Recent Updates
+
+### Video Integration (July 12, 2025)
+- ✅ Added full-screen cinematic video hero section
+- ✅ Implemented proper video fallback to hero image
+- ✅ Fixed React nested anchor tag warnings for better code quality
+- ✅ Created Vercel deployment configuration
+
+### Migration Completed
+- ✅ Successfully migrated from Replit Agent to standard Replit environment
+- ✅ All dependencies installed and configured
+- ✅ Project running without errors on port 5000
+- ✅ Frontend and backend properly integrated
+- ✅ Video assets properly configured with fallback handling
+
+## Deployment Options
+
+### Vercel Deployment
+- Configured `vercel.json` for serverless deployment
+- API routes handled via `/api/index.js` serverless function
+- Static assets served from `/dist/public/`
+- Build script: `npm run build` followed by Vercel deployment
+
+### Replit Deployment
+- Use built-in Replit deployment feature
+- Project ready for immediate deployment via Replit interface
+- All configurations optimized for Replit hosting environment

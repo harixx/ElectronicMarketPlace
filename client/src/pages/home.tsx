@@ -31,6 +31,7 @@ import productImage2 from "@assets/image_1752312142189.png";
 import productImage3 from "@assets/image_1752312154975.png";
 import productImage4 from "@assets/image_1752312175740.png";
 import productImage5 from "@assets/image_1752312190588.png";
+import loungewearVideo from "@assets/website_video_1752312335308.webm";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
@@ -350,6 +351,79 @@ function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* Cinematic Video Showcase */}
+      <section className="relative h-screen overflow-hidden bg-black">
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster={heroImage}
+          >
+            <source src={loungewearVideo} type="video/webm" />
+            {/* Fallback for browsers that don't support video */}
+            <img 
+              src={heroImage} 
+              alt="ELORA Loungewear Collection" 
+              className="w-full h-full object-cover"
+            />
+          </video>
+        </div>
+
+        {/* Video Overlay Content */}
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-4xl mx-auto">
+            <Badge className="bg-white/20 backdrop-blur-sm text-white px-6 py-3 mb-8 text-sm font-medium border border-white/30">
+              Experience ELORA
+            </Badge>
+            
+            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Comfort Meets
+              <span className="block text-[#fdb51c]">Elegance</span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
+              Discover the perfect blend of luxury and comfort with our premium loungewear collection
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-[#fdb51c] hover:bg-[#fdb51c]/90 text-black px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all"
+              >
+                <Link href="/products">
+                  <a className="flex items-center">
+                    Explore Collection
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
+                </Link>
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all backdrop-blur-sm"
+              >
+                Watch Story
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+          <p className="text-sm mt-2 opacity-75">Scroll to explore</p>
+        </div>
+      </section>
+
       {/* Story Section - Build Emotional Connection */}
       <section className="py-20 bg-[#fdb51c]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

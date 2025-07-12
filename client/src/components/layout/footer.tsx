@@ -42,7 +42,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Royal Brand Section */}
             <div className="lg:col-span-1">
-              <h3 className="font-playfair text-3xl font-bold mb-4 text-royal-gold text-shadow-royal">ELORA</h3>
+              <h3 className="font-playfair text-3xl font-bold mb-4 text-shadow-royal text-[#fffbf0]">ELORA</h3>
               <p className="text-royal-cream/90 mb-6 leading-relaxed">
                 Pakistan's most trusted premium loungewear brand. Crafting comfort and elegance for the modern woman since 2019.
               </p>

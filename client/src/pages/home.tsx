@@ -18,23 +18,36 @@ import silkLoungeImage from "@assets/image_1752307687983.png";
 import cottonSetImage from "@assets/image_1752307696376.png";
 import galleryImage1 from "@assets/image_1752311622664.png";
 import galleryImage2 from "@assets/image_1752311636276.png";
+import galleryImage3 from "@assets/image_1752308495747.png";
+import galleryImage4 from "@assets/image_1752309158083.png";
+import galleryImage5 from "@assets/image_1752309240634.png";
+import galleryImage6 from "@assets/image_1752309274793.png";
+import galleryImage7 from "@assets/image_1752309298739.png";
+import galleryImage8 from "@assets/image_1752309315972.png";
+import galleryImage9 from "@assets/image_1752311340735.png";
+import galleryImage10 from "@assets/image_1752311590457.png";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products/featured"],
   });
 
-  // Gallery images with product details
+  // Gallery images with product details - Individual product showcase
   const galleryImages = [
-    { src: galleryImage1, alt: "ELORA Luxury Pajama Collection - Premium Silk Sets" },
-    { src: galleryImage2, alt: "ELORA Summer Collection - Lightweight Cotton Loungewear" },
-    { src: pajamaSetImage, alt: "ELORA Premium Pajama Sets - Comfortable Night Sets" },
-    { src: silkLoungeImage, alt: "ELORA Silk Loungewear - Elegant Night Dresses" },
-    { src: cottonSetImage, alt: "ELORA Cotton Collection - Breathable Sleepwear" },
-    { src: heroImage, alt: "ELORA Hero Collection - Premium Nightwear" },
-    // Duplicate for seamless scroll
-    { src: galleryImage1, alt: "ELORA Luxury Pajama Collection - Premium Silk Sets" },
-    { src: galleryImage2, alt: "ELORA Summer Collection - Lightweight Cotton Loungewear" },
+    { src: galleryImage1, alt: "ELORA Luxury Striped Pajama Set - Black Gold Stripes", title: "Luxury Striped Set" },
+    { src: galleryImage2, alt: "ELORA Premium Burgundy Striped Loungewear", title: "Burgundy Stripes" },
+    { src: galleryImage3, alt: "ELORA Floral Print Loungewear - Elegant Garden Design", title: "Garden Florals" },
+    { src: galleryImage4, alt: "ELORA Cozy Oversized Loungewear - Ultimate Comfort", title: "Cozy Oversized" },
+    { src: galleryImage5, alt: "ELORA Black Floral Print Pajamas - Sophisticated Style", title: "Black Florals" },
+    { src: galleryImage6, alt: "ELORA Brown Floral Robe - Luxurious Morning Wear", title: "Brown Floral Robe" },
+    { src: galleryImage7, alt: "ELORA Turquoise Silk Pajamas - Premium Comfort", title: "Turquoise Silk" },
+    { src: galleryImage8, alt: "ELORA Navy Pinstripe Set - Classic Elegance", title: "Navy Pinstripes" },
+    { src: galleryImage9, alt: "ELORA Blush Pink Loungewear - Soft Feminine Style", title: "Blush Pink Set" },
+    { src: galleryImage10, alt: "ELORA Navy Polka Dot Pajamas - Timeless Design", title: "Navy Polka Dots" },
+    { src: pajamaSetImage, alt: "ELORA Premium Pajama Sets - Complete Comfort", title: "Premium Sets" },
+    { src: silkLoungeImage, alt: "ELORA Silk Collection - Luxurious Elegance", title: "Silk Collection" },
+    { src: cottonSetImage, alt: "ELORA Cotton Loungewear - Breathable Style", title: "Cotton Comfort" },
+    { src: heroImage, alt: "ELORA Hero Collection - Premium Nightwear", title: "Hero Collection" },
   ];
 
   // Dynamic Gallery Component
@@ -120,7 +133,7 @@ function HomeContent() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 relative group"
             >
               <img
                 src={image.src}
@@ -129,6 +142,19 @@ function HomeContent() {
                 draggable={false}
                 style={{ userSelect: 'none' }}
               />
+              {/* Product title overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="text-white font-semibold text-lg">{image.title}</h3>
+                <p className="text-white/80 text-sm">Premium Loungewear</p>
+              </div>
+              {/* Featured badge for first few items */}
+              {index < 4 && (
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-[#4d0404] text-white px-3 py-1 text-xs font-semibold">
+                    FEATURED
+                  </Badge>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -24,14 +24,22 @@
   --ring: hsl(45, 74%, 60%);
   --radius: 0.5rem;
   
-  /* Custom Elora colors - Neutral Pastel Palette */
-  --cream: hsl(45, 20%, 96%);
-  --blush: hsl(350, 25%, 85%);
-  --sage: hsl(90, 20%, 75%);
-  --lavender: hsl(260, 20%, 85%);
-  --gold: hsl(42, 40%, 70%);
-  --charcoal: hsl(220, 15%, 25%);
-  --stone: hsl(30, 8%, 52%);
+  /* Royal ELORA colors - Psychology-driven luxury palette */
+  --royal-purple: hsl(258, 45%, 15%);     /* Deep authority & premium feel */
+  --royal-gold: hsl(41, 98%, 55%);        /* Luxury & success */
+  --royal-navy: hsl(215, 28%, 17%);       /* Trust & reliability */
+  --royal-burgundy: hsl(345, 47%, 25%);   /* Sophistication */
+  --royal-cream: hsl(45, 100%, 97%);      /* Clean elegance */
+  --royal-silver: hsl(210, 14%, 83%);     /* Modern refinement */
+  
+  /* Enhanced brand colors with royal psychology */
+  --cream: hsl(45, 100%, 97%);            /* Pure, clean luxury */
+  --blush: hsl(345, 47%, 85%);            /* Gentle femininity */
+  --sage: hsl(152, 25%, 45%);             /* Growth & harmony */
+  --lavender: hsl(260, 30%, 75%);         /* Calm sophistication */
+  --gold: hsl(41, 98%, 55%);              /* Premium success */
+  --charcoal: hsl(215, 28%, 17%);         /* Professional trust */
+  --stone: hsl(30, 15%, 52%);             /* Grounded stability */
 }
 
 .dark {
@@ -135,6 +143,40 @@
 .skeleton {
   @apply animate-pulse bg-gray-200 rounded;
 }
+
+/* Royal Psychology-Driven Utilities for Better Readability */
+.text-royal-purple { color: var(--royal-purple); }
+.bg-royal-purple { background-color: var(--royal-purple); }
+.text-royal-gold { color: var(--royal-gold); }
+.bg-royal-gold { background-color: var(--royal-gold); }
+.text-royal-navy { color: var(--royal-navy); }
+.bg-royal-navy { background-color: var(--royal-navy); }
+.text-royal-burgundy { color: var(--royal-burgundy); }
+.bg-royal-burgundy { background-color: var(--royal-burgundy); }
+.text-royal-cream { color: var(--royal-cream); }
+.bg-royal-cream { background-color: var(--royal-cream); }
+
+/* High Contrast Backgrounds for Perfect Readability */
+.bg-high-contrast { 
+  background-color: var(--royal-cream); 
+  color: var(--royal-navy); 
+}
+.bg-dark-contrast { 
+  background-color: var(--royal-navy); 
+  color: var(--royal-cream); 
+}
+
+/* Luxury Gradients */
+.bg-gradient-royal { 
+  background: linear-gradient(135deg, var(--royal-purple), var(--royal-navy)); 
+}
+.bg-gradient-luxury { 
+  background: linear-gradient(135deg, var(--royal-gold), var(--gold)); 
+}
+
+/* Text Shadow for Readability */
+.text-shadow-royal { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+.text-shadow-soft { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
 
 /* Image zoom effect */
 .image-zoom {

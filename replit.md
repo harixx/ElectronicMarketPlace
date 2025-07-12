@@ -139,11 +139,12 @@ Preferred communication style: Simple, everyday language.
 ## Deployment Options
 
 ### Vercel Deployment
-- Configured `vercel.json` for serverless deployment using both static build and Node.js function
+- Successfully configured `vercel.json` for serverless deployment using `package.json` as build source
+- Static build configuration properly targets `dist/public` output directory
 - API routes handled via `/api/index.js` serverless function  
-- Static assets served from `/dist/public/` directory after build
-- Build process: `npm run build` creates both frontend assets and backend bundle
-- Fixed deployment configuration to properly handle both static files and API endpoints
+- Build process verified: `npm run build` creates both frontend assets and backend bundle
+- **Fixed: "Build src is client/index.html but expected package.json" error resolved**
+- Deployment configuration now uses `@vercel/static-build` and `@vercel/node` properly
 - Ready for production deployment with persistent PostgreSQL database
 
 ### Replit Deployment

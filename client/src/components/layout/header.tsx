@@ -151,7 +151,7 @@ export function Header() {
               <div className="flex-1 md:flex-none cursor-pointer group">
                 <h1 className="font-playfair text-3xl font-bold text-charcoal tracking-wide group-hover:text-gold transition-colors">
                   ELORA
-                  <span className="text-xs font-inter font-light tracking-normal block text-stone group-hover:text-gold/70 transition-colors">
+                  <span className="text-xs font-inter font-light tracking-normal block group-hover:text-gold/70 transition-colors text-[#ffffff]">
                     Premium Loungewear
                   </span>
                 </h1>

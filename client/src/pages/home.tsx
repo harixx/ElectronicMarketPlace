@@ -322,15 +322,17 @@ function HomeContent() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all">
-                <Link href="/products" className="flex items-center">
-                  Explore Collection
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <Link href="/products">
+                  <a className="flex items-center">
+                    Explore Collection
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
                 </Link>
               </Button>
               
               <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-full font-semibold text-lg transition-all bg-[#fdb51c]">
                 <Link href="#collections">
-                  See What's Popular
+                  <a>See What's Popular</a>
                 </Link>
               </Button>
             </div>
@@ -412,9 +414,11 @@ function HomeContent() {
                 size="lg" 
                 className="bg-[#fdb51c] hover:bg-[#fdb51c]/90 text-black px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all"
               >
-                <Link href="/products" className="flex items-center">
-                  Explore Collection
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <Link href="/products">
+                  <a className="flex items-center">
+                    Explore Collection
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
                 </Link>
               </Button>
               

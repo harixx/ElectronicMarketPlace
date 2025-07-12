@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id               Int      @id @default(autoincrement())
+  name             String
+  description      String
+  price            Decimal  @db.Decimal(10, 2)
+  salePrice        Decimal? @db.Decimal(10, 2)
+  category         String
+  collection       String
+  fabric           String
+  careInstructions String?
+  sizes            String[]
+  colors           String[]
+  images           String[]
+  stockQuantity    Int      @default(0)
+  featured         Boolean  @default(false)
+  averageRating    Decimal  @default(0) @db.Decimal(3, 2)
+  reviewCount      Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  reviews      Review[]
+  cartItems    CartItem[]
+  wishlistItems WishlistItem[]
+  orderItems   OrderItem[]
+
+  @@map("products")
+}
+
+model Review {
+  id           Int      @id @default(autoincrement())
+  productId    Int
+  customerName String
+  rating       Int
+  title        String?
+  comment      String
+  verified     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  sessionId String
+  productId Int
+  size      String
+  color     String
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("cart_items")
+}
+
+model WishlistItem {
+  id        Int      @id @default(autoincrement())
+  sessionId String
+  productId Int
+  createdAt DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([sessionId, productId])
+  @@map("wishlist_items")
+}
+
+model Order {
+  id            Int      @id @default(autoincrement())
+  customerName  String
+  email         String
+  phone         String
+  address       String
+  city          String
+  postalCode    String?
+  paymentMethod String
+  subtotal      Decimal  @db.Decimal(10, 2)
+  shippingCost  Decimal  @db.Decimal(10, 2)
+  total         Decimal  @db.Decimal(10, 2)
+  status        String   @default("pending")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  items OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id          Int     @id @default(autoincrement())
+  orderId     Int
+  productId   Int
+  productName String
+  size        String
+  color       String
+  quantity    Int
+  price       Decimal @db.Decimal(10, 2)
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}

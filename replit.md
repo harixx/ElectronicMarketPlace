@@ -139,11 +139,12 @@ Preferred communication style: Simple, everyday language.
 ## Deployment Options
 
 ### Vercel Deployment
-- Configured `vercel.json` for serverless deployment with `build.sh` script
-- API routes handled via `/api/index.js` serverless function
-- Static assets served from `/dist/public/`
-- Build script: `build.sh` followed by Vercel deployment
-- Fixed build source configuration to use `build.sh` instead of `package.json`
+- Configured `vercel.json` for serverless deployment using both static build and Node.js function
+- API routes handled via `/api/index.js` serverless function  
+- Static assets served from `/dist/public/` directory after build
+- Build process: `npm run build` creates both frontend assets and backend bundle
+- Fixed deployment configuration to properly handle both static files and API endpoints
+- Ready for production deployment with persistent PostgreSQL database
 
 ### Replit Deployment
 - Use built-in Replit deployment feature

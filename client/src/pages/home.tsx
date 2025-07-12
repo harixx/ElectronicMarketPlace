@@ -322,18 +322,14 @@ function HomeContent() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all">
-                <Link href="/products">
-                  <a className="flex items-center">
-                    Explore Collection
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </a>
-                </Link>
+                <a href="/products" className="flex items-center">
+                  Explore Collection
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </Button>
               
               <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-full font-semibold text-lg transition-all bg-[#fdb51c]">
-                <Link href="#collections">
-                  <a>See What's Popular</a>
-                </Link>
+                <a href="#collections">See What's Popular</a>
               </Button>
             </div>
             
@@ -414,12 +410,10 @@ function HomeContent() {
                 size="lg" 
                 className="bg-[#fdb51c] hover:bg-[#fdb51c]/90 text-black px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all"
               >
-                <Link href="/products">
-                  <a className="flex items-center">
-                    Explore Collection
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </a>
-                </Link>
+                <a href="/products" className="flex items-center">
+                  Explore Collection
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </Button>
               
               <Button 
@@ -643,12 +637,10 @@ function HomeContent() {
               <p className="text-stone">These bestsellers are flying off our shelves - grab yours before they're gone!</p>
             </div>
             <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white bg-[#4d0404]">
-              <Link href="/products">
-                <a className="flex items-center">
-                  Shop All Bestsellers
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </Link>
+              <a href="/products" className="flex items-center">
+                Shop All Bestsellers
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
             </Button>
           </div>
 
@@ -716,18 +708,14 @@ function HomeContent() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl transform hover:scale-105 transition-all">
-                  <Link href="/products">
-                    <a className="flex items-center">
-                      Shop Now & Save
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </a>
-                  </Link>
+                  <a href="/products" className="flex items-center">
+                    Shop Now & Save
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </a>
                 </Button>
                 
                 <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-sage px-6 py-4 rounded-full font-semibold transition-all bg-[#fdb51c]">
-                  <Link href="#collections">
-                    <a>Browse Collections</a>
-                  </Link>
+                  <a href="#collections">Browse Collections</a>
                 </Button>
               </div>
             </div>

@@ -16,15 +16,12 @@ export function Footer() {
         <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-royal-gold rounded-full"></div>
         <div className="absolute top-1/3 right-1/3 w-20 h-20 border border-royal-gold/50 rounded-full"></div>
       </div>
-      
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium Newsletter Section */}
         <div className="py-16 border-b border-royal-gold/30">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="font-playfair text-3xl font-bold mb-4 text-royal-gold text-shadow-royal">Stay Connected</h3>
-            <p className="text-royal-cream/90 mb-8 text-lg">
-              Join 15,000+ Pakistani women who get exclusive access to new collections and special offers
-            </p>
+            <p className="text-royal-cream/90 mb-8 text-lg">Join 15,000+ Women who get exclusive access to new collections and special offers</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input
                 type="email"

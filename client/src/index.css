@@ -72,6 +72,16 @@
     @apply border-border;
   }
 
+  /* Hide scrollbar for gallery */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', 'Inter', 'system-ui', sans-serif;

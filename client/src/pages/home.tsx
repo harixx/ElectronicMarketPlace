@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Star, Truck, RotateCcw, Shield, Headphones, Heart, Users, Clock, Sparkles } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { ArrowRight, Star, Truck, RotateCcw, Shield, Headphones, Heart, Users, Clock, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Header } from "@/components/layout/header";
@@ -15,11 +16,125 @@ import heroImage from "@assets/image_1752307657036.png";
 import pajamaSetImage from "@assets/image_1752307666934.png";
 import silkLoungeImage from "@assets/image_1752307687983.png";
 import cottonSetImage from "@assets/image_1752307696376.png";
+import galleryImage1 from "@assets/image_1752311622664.png";
+import galleryImage2 from "@assets/image_1752311636276.png";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products/featured"],
   });
+
+  // Gallery images with product details
+  const galleryImages = [
+    { src: galleryImage1, alt: "ELORA Luxury Pajama Collection - Premium Silk Sets" },
+    { src: galleryImage2, alt: "ELORA Summer Collection - Lightweight Cotton Loungewear" },
+    { src: pajamaSetImage, alt: "ELORA Premium Pajama Sets - Comfortable Night Sets" },
+    { src: silkLoungeImage, alt: "ELORA Silk Loungewear - Elegant Night Dresses" },
+    { src: cottonSetImage, alt: "ELORA Cotton Collection - Breathable Sleepwear" },
+    { src: heroImage, alt: "ELORA Hero Collection - Premium Nightwear" },
+    // Duplicate for seamless scroll
+    { src: galleryImage1, alt: "ELORA Luxury Pajama Collection - Premium Silk Sets" },
+    { src: galleryImage2, alt: "ELORA Summer Collection - Lightweight Cotton Loungewear" },
+  ];
+
+  // Dynamic Gallery Component
+  const DynamicGallery = () => {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isMouseDown, setIsMouseDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+      if (!scrollRef.current) return;
+      setIsMouseDown(true);
+      setIsDragging(false);
+      setStartX(e.pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseLeave = () => {
+      setIsMouseDown(false);
+      setIsDragging(false);
+    };
+
+    const handleMouseUp = () => {
+      setIsMouseDown(false);
+      setIsDragging(false);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+      if (!isMouseDown || !scrollRef.current) return;
+      e.preventDefault();
+      setIsDragging(true);
+      const x = e.pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll speed multiplier
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const scroll = (direction: 'left' | 'right') => {
+      if (!scrollRef.current) return;
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    };
+
+    return (
+      <div className="relative">
+        {/* Navigation Arrows */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full p-2"
+          onClick={() => scroll('left')}
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full p-2"
+          onClick={() => scroll('right')}
+        >
+          <ChevronRight className="w-5 h-5" />
+        </Button>
+
+        {/* Scrollable Gallery */}
+        <div
+          ref={scrollRef}
+          className={`flex gap-6 overflow-x-auto scrollbar-hide py-4 px-4 ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitScrollbar: { display: 'none' },
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+        >
+          {galleryImages.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                draggable={false}
+                style={{ userSelect: 'none' }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   const collections = [
     {
@@ -393,6 +508,27 @@ function HomeContent() {
           )}
         </div>
       </section>
+
+      {/* Dynamic Product Gallery */}
+      <section className="py-20 bg-gradient-to-br from-cream to-blush/30">
+        <div className="max-w-full mx-auto">
+          <div className="text-center mb-12 px-4">
+            <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">
+              <Heart className="w-4 h-4 mr-2" />
+              Gallery
+            </Badge>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-4">
+              Discover Our Collection
+            </h2>
+            <p className="text-stone text-lg max-w-2xl mx-auto mb-8">
+              Drag to explore our premium loungewear collection - each piece crafted for comfort and elegance
+            </p>
+          </div>
+          
+          <DynamicGallery />
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -98,7 +98,7 @@ function HomeContent() {
           </Badge>
         </div>
         
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative z-10 flex items-center justify-center h-full bg-[#4d0404]">
           <div className="text-center text-white max-w-5xl mx-auto px-4">
             {/* Limited time offer banner */}
             <div className="mb-6">

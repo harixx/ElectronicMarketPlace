@@ -103,7 +103,7 @@ export function Header() {
 
         {/* Main Header */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#fdb51c]">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-4 bg-[#fdb51c]">
             {/* Mobile Menu Button */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>

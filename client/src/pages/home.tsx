@@ -134,7 +134,7 @@ function HomeContent() {
                 </Link>
               </Button>
               
-              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-full font-semibold text-lg transition-all">
+              <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-charcoal px-8 py-4 rounded-full font-semibold text-lg transition-all bg-[#fdb51c]">
                 <Link href="#collections">
                   <a>See What's Popular</a>
                 </Link>
@@ -280,7 +280,7 @@ function HomeContent() {
         </div>
       </section>
       {/* Customer Love Stories */}
-      <section className="py-20 bg-[#880000]">
+      <section className="py-20 bg-[#4d0404]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">

@@ -168,7 +168,7 @@ function HomeContent() {
                 Our Story
               </Badge>
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal mb-6 leading-tight">
-                Every Pakistani Woman Deserves to Feel
+                Every Woman Deserves to Feel
                 <span className="text-gold"> Extraordinary</span>
               </h2>
               <p className="text-lg mb-6 leading-relaxed text-[#ffffff]">

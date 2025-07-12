@@ -349,7 +349,7 @@ function HomeContent() {
         </div>
       </section>
       {/* Bestsellers with Urgency */}
-      <section className="py-16 bg-cream/30">
+      <section className="py-16 bg-[#fdb51c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <div>

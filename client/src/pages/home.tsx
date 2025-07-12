@@ -280,7 +280,7 @@ function HomeContent() {
         </div>
       </section>
       {/* Customer Love Stories */}
-      <section className="py-20 bg-sage/5">
+      <section className="py-20 bg-[#880000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">

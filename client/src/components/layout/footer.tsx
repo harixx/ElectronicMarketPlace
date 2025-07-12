@@ -20,7 +20,7 @@ export function Footer() {
         {/* Premium Newsletter Section */}
         <div className="py-16 border-b border-royal-gold/30">
           <div className="text-center max-w-2xl mx-auto">
-            <h3 className="font-playfair text-3xl font-bold mb-4 text-royal-gold text-shadow-royal">Stay Connected</h3>
+            <h3 className="font-playfair text-3xl font-bold mb-4 text-shadow-royal text-[#fffbf0]">Stay Connected</h3>
             <p className="text-royal-cream/90 mb-8 text-lg">Join 15,000+ Women who get exclusive access to new collections and special offers</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <Input

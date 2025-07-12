@@ -215,7 +215,6 @@ export function Footer() {
             <div className="border-t border-royal-gold/30 pt-8 flex flex-col md:flex-row justify-between items-center text-royal-cream/80">
               <div className="text-center md:text-left">
                 <p className="text-royal-cream/90">&copy; {currentYear} ELORA. All rights reserved.</p>
-                <p className="text-xs mt-1 text-royal-gold">Made with ❤️ for Pakistani women</p>
               </div>
               <div className="flex space-x-6 mt-4 md:mt-0 text-sm">
                 <a href="#" className="hover:text-royal-gold transition-colors">Privacy Policy</a>

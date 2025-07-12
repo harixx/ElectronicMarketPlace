@@ -9,6 +9,10 @@ import { ProductCard } from "@/components/product/product-card";
 import { CartProvider } from "@/hooks/use-cart";
 import { WishlistProvider } from "@/hooks/use-wishlist";
 import { Product } from "@shared/schema";
+import heroImage from "@assets/image_1752307657036.png";
+import pajamaSetImage from "@assets/image_1752307666934.png";
+import silkLoungeImage from "@assets/image_1752307687983.png";
+import cottonSetImage from "@assets/image_1752307696376.png";
 
 function HomeContent() {
   const { data: featuredProducts = [], isLoading } = useQuery<Product[]>({
@@ -17,28 +21,28 @@ function HomeContent() {
 
   const collections = [
     {
-      name: "Nighties",
-      caption: "Dreamy Comfort",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
-      href: "/products?category=nightdress"
-    },
-    {
-      name: "Sets",
-      caption: "Complete Elegance",
-      image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
+      name: "Pajama Sets",
+      caption: "Complete Comfort",
+      image: pajamaSetImage,
       href: "/products?category=sets"
     },
     {
-      name: "Robes",
-      caption: "Luxurious Wrap",
-      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
-      href: "/products?category=robes"
+      name: "Silk Loungewear",
+      caption: "Luxurious Elegance", 
+      image: silkLoungeImage,
+      href: "/products?category=silk"
     },
     {
-      name: "Loungewear",
-      caption: "Relaxed Sophistication",
-      image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
-      href: "/products?category=loungewear"
+      name: "Cotton Sets",
+      caption: "Breathable Style",
+      image: cottonSetImage,
+      href: "/products?category=cotton"
+    },
+    {
+      name: "Night Robes",
+      caption: "Cozy Sophistication",
+      image: heroImage,
+      href: "/products?category=robes"
     }
   ];
 
@@ -74,7 +78,7 @@ function HomeContent() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`
           }}
         />
         
@@ -193,7 +197,7 @@ function HomeContent() {
             
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=700"
+                src={pajamaSetImage}
                 alt="ELORA Quality"
                 className="rounded-2xl shadow-2xl"
               />

@@ -175,7 +175,7 @@ function HomeContent() {
                 Born from the belief that comfort shouldn't compromise elegance, ELORA creates 
                 premium loungewear for the modern Pakistani woman who values quality, style, and sophistication.
               </p>
-              <p className="text-base text-stone mb-8">
+              <p className="text-base mb-8 text-[#ffffff]">
                 From our first silk nightdress to becoming Pakistan's most trusted sleepwear brand, 
                 we've made it our mission to help you end each day feeling beautiful and confident.
               </p>

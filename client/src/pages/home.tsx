@@ -474,9 +474,6 @@ function HomeContent() {
       <section className="py-20 bg-[#4d0404]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gold/20 text-gold px-4 py-2 mb-6">
-              Customer Love
-            </Badge>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-[#ffffff]">
               What Our Customers Say
             </h2>

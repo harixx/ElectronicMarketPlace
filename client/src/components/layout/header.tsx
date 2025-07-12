@@ -149,7 +149,7 @@ export function Header() {
             {/* Logo - Enhanced */}
             <Link href="/">
               <div className="flex-1 md:flex-none cursor-pointer group">
-                <h1 className="font-playfair text-3xl font-bold text-charcoal tracking-wide group-hover:text-gold transition-colors">
+                <h1 className="font-playfair text-3xl font-bold text-charcoal tracking-wide group-hover:text-gold transition-colors text-center ml-[0px] mr-[0px] pl-[31px] pr-[31px] pt-[0px] pb-[0px]">
                   ELORA
                   <span className="text-xs font-inter font-light tracking-normal block group-hover:text-gold/70 transition-colors text-[#ffffff]">
                     Premium Loungewear

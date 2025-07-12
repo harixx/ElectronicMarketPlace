@@ -74,7 +74,6 @@ function HomeContent() {
   return (
     <div className="min-h-screen bg-cream">
       <Header />
-      
       {/* Hero Section with Enhanced Hook */}
       <section className="relative h-screen overflow-hidden">
         <div 
@@ -160,7 +159,6 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       {/* Story Section - Build Emotional Connection */}
       <section className="py-20 bg-blush/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +225,6 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       {/* Featured Collections - 4-tile grid */}
       <section id="collections" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -282,7 +279,6 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       {/* Customer Love Stories */}
       <section className="py-20 bg-sage/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -352,7 +348,6 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       {/* Bestsellers with Urgency */}
       <section className="py-16 bg-cream/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -398,7 +393,6 @@ function HomeContent() {
           )}
         </div>
       </section>
-
       {/* Features */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -415,11 +409,10 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       {/* Final Call to Action - Irresistible Offer */}
       <section className="py-20 bg-gradient-to-r from-sage to-sage/80 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#4d0404]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="bg-gold/20 border border-gold text-gold px-6 py-3 mb-6 text-sm font-medium">
@@ -517,7 +510,6 @@ function HomeContent() {
           </div>
         </div>
       </section>
-
       <Footer />
       <FloatingWhatsApp />
       <ScrollToTop />

@@ -362,9 +362,9 @@ function HomeContent() {
               </h2>
               <p className="text-stone">These bestsellers are flying off our shelves - grab yours before they're gone!</p>
             </div>
-            <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white">
+            <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white bg-[#4d0404]">
               <Link href="/products">
-                <a className="flex items-center bg-[#4d0404]">
+                <a className="flex items-center">
                   Shop All Bestsellers
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
@@ -459,7 +459,7 @@ function HomeContent() {
                   </Link>
                 </Button>
                 
-                <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-sage px-6 py-4 rounded-full font-semibold transition-all">
+                <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-sage px-6 py-4 rounded-full font-semibold transition-all bg-[#fdb51c]">
                   <Link href="#collections">
                     <a>Browse Collections</a>
                   </Link>

@@ -102,8 +102,9 @@ export function Header() {
         </div>
 
         {/* Main Header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#fdb51c] pl-[0px] pr-[0px]">
-          <div className="flex items-center justify-between py-4 bg-[#fdb51c]">
+        <div className="bg-[#fdb51c] w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between py-4">
             {/* Mobile Menu Button */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -233,6 +234,7 @@ export function Header() {
             </div>
           </div>
         </div>
+      </div>
       </header>
       {/* Mobile Sticky Search Bar */}
       {isMobile && (
